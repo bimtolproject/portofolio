@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Bima</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('https://bimtolproject.github.io/chibimemories/resource/bimtol.png') center/cover no-repeat;
+  color: white;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  background: #1c1c1c;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: #03a9f4;
+  transform: translateY(-2px);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #03a9f4;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+
+.nav-links li a:hover {
+  background: #03a9f4;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1c1c1c;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #03a9f4;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0288d1;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1f1f1f;
+}
+
+#skill {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.skill-bar p {
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar {
+  background: #333;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 15px;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  height: 100%;
+  background: #03a9f4;
+  width: 0; /* Start from 0 for animation */
+  transition: width 1s ease-in-out;
+}
+</style>
+</head>
+<body>
+  <header>
+  <h1>Hi My Name is Bima!</h1>
+  <p>Web Designer | Web Developer</p>
+</header>
+
+  <nav>
+  <div class="nav-container">
+    <div class="logo">Bima Rachmat P</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#tentang">About me</a></li>
+      <li><a href="#kontak">Contact me</a></li>
+      <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>  Profile LinkedIn</a></li>
+      <li><a href="https://github.com" target="_blank"><i class="fab fa-github"></i>  Bimtol Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <p>Halo! Saya Bima, seorang Web Designer dan Web Developer yang antusias dalam membangun solusi digital yang efisien dan elegan. Dengan pengalaman dalam pengembangan frontend dan backend, saya berkomitmen menciptakan website yang tidak hanya fungsional, tapi juga menyenangkan untuk digunakan. Saya menguasai berbagai teknologi modern seperti HTML, CSS, JavaScript serta memiliki ketertarikan besar terhadap UI/UX design.
+</p>
+  </section>
+
+  <section id="portofolio">
+    <h2>Proyek Terbaru</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Project 1" />
+        <h3>Aplikasi To-Do List</h3>
+        <p>Aplikasi sederhana untuk mengatur tugas harian Anda.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Project 2" />
+        <h3>Website Travel</h3>
+        <p>Website eksplorasi destinasi dengan desain yang menarik.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="skill">
+  <h2>Keahlian Saya</h2>
+  <div class="skill-bar">
+    <p>HTML <span>85%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="85%"></div>
+    </div>
+    
+    <p>CSS <span>80%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="80%"></div>
+    </div>
+    
+    <p>JavaScript <span>25%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="25%"></div>
+    </div>
+    
+    <p>UI/UX Design <span>35%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="35%"></div>
+    </div>
+    
+    <p>Microsoft Office<span>65%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="65%"></div>
+    </div>
+    
+    <p>Speak & Listening English <span>50%</span></p>
+    <div class="bar">
+      <div class="progress" data-skill="50%"></div>
+    </div>
+  </div>
+</section>
+
+  <section id="kontak">
+    <h2>Hubungi Saya</h2>
+    <form id="formKontak">
+      <input type="text" id="nama" placeholder="Nama Anda" required />
+      <input type="email" id="email" placeholder="Email Anda" required />
+      <textarea id="pesan" placeholder="Tulis pesan Anda..." required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+    <p id="statusPesan"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bima. All rights reserved.</p>
+  </footer>
+
+  <script>
+  document.getElementById("formKontak").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nama = document.getElementById("nama").value;
+  const email = document.getElementById("email").value;
+  const pesan = document.getElementById("pesan").value;
+
+  document.getElementById("statusPesan").textContent = `Terima kasih ${nama}, pesan Anda sudah dikirim!`;
+  this.reset();
+});
+
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+// Animasi progress bar saat scroll ke skill section
+function animateSkillBars() {
+  const skills = document.querySelectorAll('.progress');
+  const triggerBottom = window.innerHeight;
+
+  skills.forEach(skill => {
+    const barTop = skill.getBoundingClientRect().top;
+    if (barTop < triggerBottom) {
+      skill.style.width = skill.getAttribute('data-skill');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateSkillBars);
+window.addEventListener('load', animateSkillBars);
+
+  </script>
+</body>
+</html>
